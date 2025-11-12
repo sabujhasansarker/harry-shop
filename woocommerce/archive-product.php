@@ -146,6 +146,12 @@ if (woocommerce_product_loop()) {
 											harry_product_list();
 										}
 									}
+									/**
+									 * Hook: woocommerce_after_shop_loop.
+									 *
+									 * @hooked woocommerce_pagination - 10
+									 */
+									do_action('woocommerce_after_shop_loop');
 									?>
 								</div>
 							</div>
