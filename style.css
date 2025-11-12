@@ -1,0 +1,394 @@
+/*
+Theme Name: Harry Shop
+Author: Theme_Pure
+Author URI: https://themeforest.net/user/hixstudio
+Description: Techub is a Modern & Professional WP Theme which is perfectly suitable for the Agency, Marketing, Consulting, start-up, IT Solutions, and Services Company related any business website.
+Version: 1.0.0
+Text Domain: harry-shop
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+.rc__post-thumb img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+.postbox__comment.mb-95 {
+  list-style: none;
+}
+.comment .children {
+  margin-left: 50px;
+}
+.post.post-post.current-item {
+  color: #fff;
+}
+.portfolio-filter-button {
+  margin-bottom: 40px;
+}
+.portfolio-filter-button.d-flex button {
+  margin-right: 10px;
+  background: #000;
+  color: #fff;
+  padding: 6px 20px;
+}
+.portfolio-filter-button.d-flex button.active {
+  background: #f00;
+  color: #fff;
+}
+img {
+  height: auto;
+}
+.product__ammount ins {
+  text-decoration: none;
+}
+.added_to_cart {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--tp-common-white);
+  background-color: var(--tp-common-black);
+  display: block;
+  padding: 7px 25px;
+  text-align: center;
+}
+.added_to_cart:hover {
+  color: var(--tp-common-white);
+  background-color: var(--tp-theme-1);
+}
+.product-add-cart-btn {
+  width: 100%;
+}
+.product-add-cart-btn-2 {
+  width: unset;
+}
+.product-add-cart-btn.added {
+  display: none;
+}
+.product__list-action .product-add-cart-btn-2 {
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+.woosc-area {
+  background: transparent;
+}
+
+/* Woo rating */
+.star-rating {
+  position: relative;
+  display: inline-block;
+}
+.star-rating span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  font-size: 0px;
+  display: flex;
+}
+.star-rating::before {
+  font-family: "ElegantIcons";
+  content: "\e031\e031\e031\e031\e031";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--tp-common-yellow-5);
+  font-size: 11px;
+}
+.star-rating span::before {
+  font-family: "ElegantIcons";
+  content: "\e033\e033\e033\e033\e033";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--tp-common-yellow-5);
+  font-size: 11px;
+  font-weight: 900;
+  display: inline-block;
+}
+.filter-title {
+  font-family: var(--tp-ff-roboto);
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 12px;
+  color: var(--tp-common-black-solid);
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.shop__widget {
+  margin-bottom: 30px;
+}
+.filter-item.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item
+  > label
+  > a::after {
+  position: absolute;
+  content: "";
+  top: 2px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #dadce0;
+}
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item
+  > label
+  > a::before {
+  content: "\f00c";
+  font-family: var(--tp-ff-fontawesome);
+  color: transparent;
+  position: absolute;
+  z-index: 1;
+  border: 0;
+  width: inherit;
+  height: inherit;
+  top: -2px;
+  left: 4px;
+  font-size: 12px;
+}
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active
+  > label
+  > a::after {
+  background-color: var(--tp-common-black);
+  border-color: var(--tp-common-black);
+}
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active
+  > label
+  > a::before {
+  color: white;
+}
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item > label > a {
+  font-family: var(--tp-ff-roboto);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--tp-text-1);
+  position: relative;
+  padding-left: 31px;
+}
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active
+  > label
+  > a {
+  color: var(--tp-common-black);
+}
+/* Color */
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.color
+  .term-label {
+  font-family: var(--tp-ff-roboto);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--tp-text-1);
+  position: relative;
+}
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item.color {
+  display: inline-block;
+}
+.yith-wcan-filters .yith-wcan-filter .filter-items .filter-item.color > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.yith-wcan-filters .yith-wcan-filter .filter-items.filter-color {
+  display: flex;
+  flex-direction: column;
+}
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.color
+  .term-color {
+  margin-bottom: 0;
+  width: 22px;
+  height: 22px;
+}
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active.color:not(.no-color):not(.no-image):not(.label-right)
+  > a:after {
+  content: "\f00c";
+  right: auto;
+  top: 46%;
+  left: 4px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: var(--tp-ff-fontawesome);
+  background-image: none;
+  background-color: transparent;
+  font-size: 12px;
+}
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active.color
+  .term-color,
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.active.color
+  .term-image,
+.yith-wcan-filters
+  .yith-wcan-filter
+  .filter-items
+  .filter-item.color
+  .term-color:hover {
+  border-color: transparent;
+}
+.search-field:focus-visible {
+  outline: none;
+}
+
+.woocommerce .widget_price_filter .price_slider {
+  margin-bottom: 1em;
+}
+
+.woocommerce .widget_price_filter .price_slider_amount {
+  text-align: right;
+  line-height: 2.4;
+  font-size: 0.8751em;
+}
+
+.woocommerce .widget_price_filter .price_slider_amount .button {
+  font-size: 1.15em;
+  float: left;
+}
+
+.woocommerce .widget_price_filter .ui-slider {
+  position: relative;
+  text-align: left;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1em;
+  height: 1em;
+  background-color: #7f54b3;
+  border-radius: 1em;
+  cursor: ew-resize;
+  outline: 0;
+  top: -0.3em;
+  margin-left: -0.5em;
+}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: 0.7em;
+  display: block;
+  border: 0;
+  border-radius: 1em;
+  background-color: #7f54b3;
+}
+
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+  border-radius: 1em;
+  background-color: #35224c;
+  border: 0;
+}
+
+.woocommerce .widget_price_filter .ui-slider-horizontal {
+  height: 0.5em;
+}
+
+.woocommerce .widget_price_filter .ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+}
+
+.woocommerce .widget_price_filter .ui-slider-horizontal .ui-slider-range-min {
+  left: -1px;
+}
+
+.woocommerce .widget_price_filter .ui-slider-horizontal .ui-slider-range-max {
+  right: -1px;
+}
+.woocommerce .widget_price_filter .price_slider_amount .button {
+  font-size: 1.15em;
+  margin: 0;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+  padding: 0.618em 1em;
+  font-weight: 700;
+  border-radius: 3px;
+  left: auto;
+  color: #515151;
+  background-color: #e9e6ed;
+  border: 0;
+  display: inline-block;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+.product__list-action .product-action-btn {
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--tp-common-black);
+  border: 1px solid #dadce0;
+}
+.product__list-action .product-action-btn:not(:last-child) {
+  margin-right: 6px;
+}
+.product__list-action .product-action-btn {
+  margin-bottom: 6px;
+}
+.product__list-action .product-action-btn:hover {
+  color: var(--tp-common-white);
+  background-color: var(--tp-theme-1);
+  border-color: var(--tp-theme-1);
+}
+.product__list-action .product-action-btn:hover .product-action-tooltip {
+  bottom: 100%;
+  top: auto;
+  right: auto;
+}
+.product__list-action .product-action-btn .product-action-tooltip {
+  top: auto;
+  bottom: 90%;
+  left: auto;
+  right: auto;
+  margin: auto;
+  margin-bottom: 10px;
+  -webkit-transform: translate(-60%, 0%);
+  -moz-transform: translate(-60%, 0%);
+  -ms-transform: translate(-60%, 0%);
+  -o-transform: translate(-60%, 0%);
+  transform: translate(-60%, 0%);
+}
+.product__list-action .product-action-btn .product-action-tooltip::after {
+  top: 100%;
+  right: 50%;
+  left: auto;
+  -webkit-transform: translate(50%, -50%) rotate(45deg);
+  -moz-transform: translate(50%, -50%) rotate(45deg);
+  -ms-transform: translate(50%, -50%) rotate(45deg);
+  -o-transform: translate(50%, -50%) rotate(45deg);
+  transform: translate(50%, -50%) rotate(45deg);
+}
