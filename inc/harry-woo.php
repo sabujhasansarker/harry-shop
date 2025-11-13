@@ -22,6 +22,15 @@ add_filter('woosw_button_position_single', '__return_false');
 add_filter('woosq_button_position', '__return_false');
 add_filter('woosc_button_position_archive', '__return_false');
 add_filter('woosc_button_position_single', '__return_false');
+
+// Details
+remove_action("woocommerce_single_product_summary", "woocommerce_template_single_title", 5);
+remove_action("woocommerce_single_product_summary", "woocommerce_template_single_rating", 10);
+remove_action("woocommerce_single_product_summary", "woocommerce_template_single_price", 10);
+remove_action("woocommerce_single_product_summary", "woocommerce_template_single_excerpt", 20);
+remove_action("woocommerce_single_product_summary", "woocommerce_template_single_add_to_cart", 30);
+remove_action("woocommerce_single_product_summary", "woocommerce_template_single_meta", 40);
+remove_action("woocommerce_single_product_summary", "woocommerce_template_single_sharing", 50);
 function harry_product_grid()
 {
      global $post;
@@ -213,3 +222,64 @@ function harry_custom_add_to_cart($args = array(), $extra_class = '')
                 </svg>' . $btntext
      );
 }
+
+function harry_details_product_content()
+{
+     global $post;
+     global $product;
+     global $woocommerce;
+     if ($product->stock_status == 'instock') {
+          $stock_text = 'In Stock';
+     } else {
+          $stock_text = 'Out of Stock';
+     }
+?>
+     <div class="product__details-stock">
+          <span><?php echo  $stock_text ?></span>
+     </div>
+     <h3 class="product__details-title"><?php woocommerce_template_single_title() ?></h3>
+
+     <div class="product__details-rating d-flex align-items-center">
+          <?php woocommerce_template_single_rating() ?>
+     </div>
+
+     <?php woocommerce_template_single_excerpt() ?>
+
+     <div class="product__details-price">
+          <?php woocommerce_template_single_price() ?>
+          <span class="product__details-offer">-12%</span>
+     </div>
+
+     <div class="product__details-action d-flex flex-wrap align-items-end">
+          <?php woocommerce_template_single_add_to_cart() ?>
+          <?php if (function_exists('woosw_init')) : ?>
+               <div class="product-action-btn" style="margin-left: 6px;">
+                    <?php echo do_shortcode('[woosw]'); ?>
+                    <span class="product-action-tooltip">
+                         <?php echo esc_html__('Add To Wishlist', 'harry-shop') ?>
+                    </span>
+               </div>
+          <?php endif ?>
+
+          <?php if (function_exists('woosc_init')) : ?>
+               <div class="product-action-btn">
+                    <?php echo do_shortcode('[woosc]'); ?>
+                    <span class="product-action-tooltip">
+                         <?php echo esc_html__('Add To Compare', 'harry-shop') ?>
+                    </span>
+               </div>
+          <?php endif ?>
+     </div>
+     <?php woocommerce_template_single_meta() ?>
+     <div class="product__details-share">
+          <span>Share:</span>
+
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+     </div>
+<?php
+}
+
+add_action("woocommerce_single_product_summary", "harry_details_product_content");

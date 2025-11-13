@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single Product Meta
  *
@@ -17,7 +18,7 @@
 
 use Automattic\WooCommerce\Enums\ProductType;
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 
@@ -25,18 +26,32 @@ global $product;
 ?>
 <div class="product_meta">
 
-	<?php do_action( 'woocommerce_product_meta_start' ); ?>
+	<?php do_action('woocommerce_product_meta_start'); ?>
 
-	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( ProductType::VARIABLE ) ) ) : ?>
+	<?php if (wc_product_sku_enabled() && ($product->get_sku() || $product->is_type(ProductType::VARIABLE))) : ?>
 
-		<span class="sku_wrapper"><?php esc_html_e( 'SKU:', 'woocommerce' ); ?> <span class="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span></span>
+		<div class="product__details-sku product__details-more">
+			<p><?php esc_html_e('SKU:', 'woocommerce'); ?></p>
+			<span class="sku"><?php echo ($sku = $product->get_sku()) ? $sku : esc_html__('N/A', 'woocommerce'); ?></span>
+		</div>
 
 	<?php endif; ?>
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+	<?php echo wc_get_product_category_list($product->get_id(), ', ', '<div class="product__details-categories product__details-more">' .
+		_n(
+			'<p>Category:</p>',
+			'<p>Categories:</p>',
+			count($product->get_category_ids()),
+			'woocommerce'
+		) . ' ', '</div>'); ?>
 
-	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
-
-	<?php do_action( 'woocommerce_product_meta_end' ); ?>
+	<?php echo wc_get_product_tag_list(
+		$product->get_id(),
+		' ',
+		'<div class="product__details-tags">' .
+			_n('<span>Tag:</span>', '<span>Tags:</span>',  count($product->get_tag_ids()), 'woocommerce') . ' ',
+		'</div>'
+	); ?>
+	<?php do_action('woocommerce_product_meta_end'); ?>
 
 </div>
