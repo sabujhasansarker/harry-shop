@@ -69,14 +69,15 @@ function techub_widgets_init()
 		'after_title'   => '</h3>',
 	));
 
+
 	register_sidebar(array(
 		'name'          => __('Product Sidebar', 'techub'),
 		'id'            => 'product-sidebar',
 		'description'   => __('Widgets in this area will be shown on product sidebar', 'techub'),
 		'before_widget' => '<div id="%1$s" class="shop__widget mb-30 %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="filter-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => '<h3 class="product__widget-title">',
+		'after_title'   => '</h3>',
 	));
 
 	register_sidebar(array(
@@ -120,12 +121,6 @@ function techub_widgets_init()
 	));
 }
 add_action('widgets_init', 'techub_widgets_init');
-
-
-
-
-
-
 
 
 
