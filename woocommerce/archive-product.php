@@ -42,9 +42,19 @@ global $wc_essential;
 
 <div class="shop__top mb-50">
 
-	<?php if (isset($wc_essential)) : ?>
-		<?php $wc_essential->wishlist_count() ?>
-	<?php endif ?>
+	<?php
+
+	if (isset($wc_essential)) {
+		$wishlist_items = $wc_essential->get_wishlist_items();
+		echo $wc_essential->wishlist_count();
+		if (is_array($wishlist_items)) {
+			foreach ($wishlist_items as $product_id) {
+				$product = wc_get_product($product_id);
+				echo $product->get_name() . '<br>';
+			}
+		}
+	}
+	?>
 	<div class="row align-items-center">
 		<div class="col-lg-6 col-md-5">
 			<div class="shop__result">

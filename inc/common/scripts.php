@@ -39,7 +39,7 @@ function add_theme_scripts()
     // wp_enqueue_script('tween-max', get_template_directory_uri() . '/assets/js/tween-max.js', array('jquery'), '0.1.0', true);
     // wp_enqueue_script('vanilla-tilt', get_template_directory_uri() . '/assets/js/vanilla-tilt.js', array('jquery'), '0.1.0', true);
     // wp_enqueue_script('wow', get_template_directory_uri() . '/assets/js/wow.js', array('jquery'), '0.1.0', true);
-    // wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
