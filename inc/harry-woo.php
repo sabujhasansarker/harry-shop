@@ -36,13 +36,13 @@ function harry_product_grid()
      global $post;
      global $product;
      global $woocommerce;
+     global $wc_essential;
 ?>
      <div class="product__item p-relative transition-3 mb-50">
           <div class="product__thumb w-img p-relative fix">
                <a href="<?php the_permalink() ?>">
                     <?php the_post_thumbnail() ?>
                </a>
-
                <div class="product__badge d-flex flex-column flex-wrap">
                     <?php woocommerce_show_product_loop_sale_flash() ?>
                </div>
@@ -81,6 +81,10 @@ function harry_product_grid()
                <div class="product__rating d-flex">
                     <?php woocommerce_template_loop_rating() ?>
                </div>
+               <?php
+               if (isset($wc_essential)) : ?>
+                    <?php $wc_essential->wishlist_icon($post->ID, '<i class="fa-regular fa-heart"></i>', '<i class="fa-solid fa-heart"></i>') ?>
+               <?php endif ?>
                <h3 class="product__title">
                     <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                </h3>

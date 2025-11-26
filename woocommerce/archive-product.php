@@ -36,9 +36,15 @@ do_action('woocommerce_before_main_content');
  * @hooked woocommerce_product_taxonomy_archive_header - 10
  */
 do_action('woocommerce_shop_loop_header');
+global $wc_essential;
 
 ?>
+
 <div class="shop__top mb-50">
+
+	<?php if (isset($wc_essential)) : ?>
+		<?php $wc_essential->wishlist_count() ?>
+	<?php endif ?>
 	<div class="row align-items-center">
 		<div class="col-lg-6 col-md-5">
 			<div class="shop__result">
